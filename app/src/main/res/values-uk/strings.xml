@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tab_Bank">банк завдань</string>
+    <string name="tab_Tasks">Завдання</string>
+    <string name="tab_Profile">профiль</string>
+    <string name="app_name">Атлас Наук</string>
+</resources>

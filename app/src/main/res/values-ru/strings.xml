@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Атлас Наук</string>
+    <string name="action_settings">Настройки</string>
+    <string name="tab_Bank">Банк Задач</string>
+    <string name="tab_Profile">Профиль</string>
+    <string name="tab_Tasks">Задачи</string>
+    <string name="title_activity_main">Атлас Наук</string>
+</resources>
