@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import imspv.atlasofscience.TabFragments.AbstractTabFragment;
-import imspv.atlasofscience.TabFragments.BankOfTasks;
 import imspv.atlasofscience.TabFragments.Profile;
 import imspv.atlasofscience.TabFragments.Tasks;
 
@@ -42,7 +41,6 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     private void initTabMap(Context context) {
         tabs = new HashMap<>();
         tabs.put(0, Tasks.newInstance(context));
-        tabs.put(1, BankOfTasks.newInstance(context));
-        tabs.put(2, Profile.newInstance(context));
+        tabs.put(1, Profile.newInstance(context));
     }
 }
