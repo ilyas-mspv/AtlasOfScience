@@ -1,6 +1,8 @@
-package imspv.atlasofscience.TabFragments.profile;
+package imspv.atlasofscience.Constants;
 
-
+/**
+ * Created by 1 on 03.04.2016.
+ */
 public class Titles {
     private String title;
     int image;

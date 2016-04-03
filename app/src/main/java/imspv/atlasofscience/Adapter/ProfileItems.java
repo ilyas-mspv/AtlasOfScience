@@ -1,7 +1,5 @@
 package imspv.atlasofscience.Adapter;
 
-
-
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import imspv.atlasofscience.Constants.Titles;
 import imspv.atlasofscience.R;
-import imspv.atlasofscience.TabFragments.profile.Titles;
 
-
+/**
+ * Created by 1 on 03.04.2016.
+ */
 public class ProfileItems extends RecyclerView.Adapter<ProfileItems.ViewHolder> {
 
     private List<Titles> titlesList;

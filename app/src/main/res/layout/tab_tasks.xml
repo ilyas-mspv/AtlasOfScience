@@ -7,7 +7,7 @@
     android:paddingRight="12dp"
     android:paddingTop="5dp"
     tools:context="imspv.atlasofscience.MainActivity$PlaceholderFragment"
-    android:background="#eeeeee">
+    android:background="#ffffff">
 
 <android.support.v7.widget.RecyclerView
     android:layout_width="match_parent"

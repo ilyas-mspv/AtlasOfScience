@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,10 +17,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import imspv.atlasofscience.Adapter.ProfileItems;
+import imspv.atlasofscience.Constants.Titles;
 import imspv.atlasofscience.R;
 import imspv.atlasofscience.Settings;
-import imspv.atlasofscience.TabFragments.profile.Titles;
-import imspv.atlasofscience.recyclerview.ItemClickSupport;
+import imspv.atlasofscience.mlibs.RecyclerView.ItemClickSupport;
 
 public class Profile extends AbstractTabFragment {
 
@@ -30,7 +29,7 @@ public class Profile extends AbstractTabFragment {
     private RecyclerView recyclerView;
     private ProfileItems mAdapter;
     private TextView titless;
-    private RelativeLayout rl;
+
     public Profile() {
     }
 
@@ -46,17 +45,8 @@ public class Profile extends AbstractTabFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         view = inflater.inflate(LAYOUT, container, false);
-        rl = (RelativeLayout) view.findViewById(R.id.myteac);
-        rl.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext().getApplicationContext(), "clicked", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
 
         recyclerView = (RecyclerView) view.findViewById(R.id.profile_recycler);
         mAdapter = new ProfileItems(titlesList);
@@ -64,23 +54,35 @@ public class Profile extends AbstractTabFragment {
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                 Titles titles = titlesList.get(position);
-                Toast.makeText(getContext().getApplicationContext(), titles.getTitle() + " clicked", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getContext().getApplicationContext(), Settings.class);
-                startActivity(intent);
-
+                switch (position) {
+                    case 0:
+                        Intent intent = new Intent(getContext().getApplicationContext(),Settings.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        Toast.makeText(getContext().getApplicationContext(),"clicked "+ position,Toast.LENGTH_SHORT).show();
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        Toast.makeText(getContext().getApplicationContext(),"clicked"+ position,Toast.LENGTH_SHORT).show();
+                        break;
+                }
             }
         });
-
-
-
         titles();
+
         return view;
     }
+
 
     private void titles() {
         Titles titles = new Titles(context.getString(R.string.my_classm));

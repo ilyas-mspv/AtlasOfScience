@@ -1,9 +1,10 @@
-package imspv.atlasofscience.recyclerview;
+package imspv.atlasofscience.mlibs.RecyclerView;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import imspv.atlasofscience.R;
+
 
 public class ItemClickSupport {
     private final RecyclerView mRecyclerView;
