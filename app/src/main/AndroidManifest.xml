@@ -27,6 +27,44 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="imspv.atlasofscience.MainActivity" />
         </activity>
+        <activity
+            android:name=".Activities.Settings"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.Teachers"
+            android:label="@string/title_activity_teachers"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.Classmates"
+            android:label="@string/title_activity_classmates"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activities.EditProfile"
+            android:label="@string/title_activity_edit_profile"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="imspv.atlasofscience.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activities.SolveTask"
+            android:label="@string/title_activity_solve_task"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="imspv.atlasofscience.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LoginRegistration.Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Login.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

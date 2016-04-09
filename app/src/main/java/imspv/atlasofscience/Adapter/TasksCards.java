@@ -32,6 +32,11 @@ public class TasksCards extends RecyclerView.Adapter<TasksCards.AtlasViewHolder>
     public void onBindViewHolder(AtlasViewHolder holder, int position) {
 
         holder.title.setText(data.get(position).getTitle());
+        holder.topic.setText(data.get(position).getTopic());
+        holder.taskname.setText(data.get(position).getTaskname());
+        holder.start.setText(data.get(position).getButton());
+
+
 
     }
 
@@ -44,6 +49,10 @@ public class TasksCards extends RecyclerView.Adapter<TasksCards.AtlasViewHolder>
 
         CardView cardView;
         TextView title;
+        TextView topic;
+        TextView taskname;
+        TextView start;
+
 
 
         public AtlasViewHolder(View itemView) {
@@ -51,8 +60,14 @@ public class TasksCards extends RecyclerView.Adapter<TasksCards.AtlasViewHolder>
 
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             title = (TextView) itemView.findViewById(R.id.title);
+            topic = (TextView) itemView.findViewById(R.id.topic);
+            taskname = (TextView) itemView.findViewById(R.id.taskname);
+            start = (TextView) itemView.findViewById(R.id.start_btn);
+
 
         }
+
+
     }
 
 

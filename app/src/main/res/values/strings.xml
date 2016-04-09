@@ -12,7 +12,12 @@
     <string name="Settings">Settings</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
-
+    <string name="title_activity_teachers">Teachers</string>
+    <string name="title_activity_classmates">Classmates</string>
+    <string name="title_activity_edit_profile">Edit Profile</string>
+    <string name="title_activity_solve_task">Solve Task</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_login">Login</string>
 
 
 </resources>

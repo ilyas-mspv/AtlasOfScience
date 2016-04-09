@@ -1,6 +1,7 @@
 package imspv.atlasofscience.TabFragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -11,9 +12,11 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
+import imspv.atlasofscience.Activities.SolveTask;
 import imspv.atlasofscience.Adapter.TasksCards;
 import imspv.atlasofscience.R;
 import imspv.atlasofscience.dto.AtlasDTO;
+import imspv.atlasofscience.mlibs.RecyclerView.ItemClickSupport;
 
 public  class Tasks extends AbstractTabFragment {
 
@@ -40,14 +43,27 @@ public  class Tasks extends AbstractTabFragment {
         RecyclerView rv  =(RecyclerView) rootView.findViewById(R.id.recyclerView);
         rv.setLayoutManager(new LinearLayoutManager(context));
         rv.setAdapter(new TasksCards(createMockListData()));
+        ItemClickSupport.addTo(rv).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
+            @Override
+            public void onItemClicked(RecyclerView recyclerView, int position, View v) {
+                switch (position) {
+                    case 0:
+                        Intent solve = new Intent(getContext().getApplicationContext(), SolveTask.class);
+                        startActivity(solve);
+                        break;
+                    case 1:
+                        break;
+                }
+            }
+        });
 
         return rootView;
     }
 
     private List<AtlasDTO> createMockListData(){
         List<AtlasDTO> data = new ArrayList<>();
-        data.add(new AtlasDTO("Andrv"));
-        data.add(new AtlasDTO("iMspv"));
+        data.add(new AtlasDTO("Physics", "Topic", "task", "Start"));
+        data.add(new AtlasDTO("Algebra","Topic","task","Start"));
         return data;
     }
 

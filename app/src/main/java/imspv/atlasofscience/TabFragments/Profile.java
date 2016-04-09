@@ -10,16 +10,18 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import imspv.atlasofscience.Activities.Classmates;
+import imspv.atlasofscience.Activities.EditProfile;
+import imspv.atlasofscience.Activities.Teachers;
 import imspv.atlasofscience.Adapter.ProfileItems;
 import imspv.atlasofscience.Constants.Titles;
 import imspv.atlasofscience.R;
-import imspv.atlasofscience.Settings;
 import imspv.atlasofscience.mlibs.RecyclerView.ItemClickSupport;
 
 public class Profile extends AbstractTabFragment {
@@ -29,7 +31,7 @@ public class Profile extends AbstractTabFragment {
     private RecyclerView recyclerView;
     private ProfileItems mAdapter;
     private TextView titless;
-
+    private ImageView edit;
     public Profile() {
     }
 
@@ -48,6 +50,18 @@ public class Profile extends AbstractTabFragment {
                              final Bundle savedInstanceState) {
         view = inflater.inflate(LAYOUT, container, false);
 
+
+        edit = (ImageView) view.findViewById(R.id.edit);
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editprofile = new Intent(getContext().getApplicationContext(), EditProfile.class);
+                startActivity(editprofile);
+            }
+        });
+
+
+
         recyclerView = (RecyclerView) view.findViewById(R.id.profile_recycler);
         mAdapter = new ProfileItems(titlesList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -60,20 +74,25 @@ public class Profile extends AbstractTabFragment {
                 Titles titles = titlesList.get(position);
                 switch (position) {
                     case 0:
-                        Intent intent = new Intent(getContext().getApplicationContext(),Settings.class);
-                        startActivity(intent);
+                        Intent classmate = new Intent(getContext().getApplicationContext(), Classmates.class);
+                        startActivity(classmate);
                         break;
                     case 1:
-                        Toast.makeText(getContext().getApplicationContext(),"clicked "+ position,Toast.LENGTH_SHORT).show();
+                        Intent teacher = new Intent(getContext().getApplicationContext(), Teachers.class);
+                        startActivity(teacher);
                         break;
                     case 2:
+
                         break;
                     case 3:
+
                         break;
                     case 4:
+
                         break;
                     case 5:
-                        Toast.makeText(getContext().getApplicationContext(),"clicked"+ position,Toast.LENGTH_SHORT).show();
+
+
                         break;
                 }
             }

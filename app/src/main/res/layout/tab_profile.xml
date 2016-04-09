@@ -3,6 +3,18 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/relat"
+        android:elevation="2dp"
+        >
+
+
+
+
+
+
         <ImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -17,9 +29,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="IMSPV"
+        android:text="Ilyas"
         android:id="@+id/textView"
-        android:layout_marginTop="24dp"
         android:layout_below="@+id/imageView"
         android:layout_centerHorizontal="true" />
 
@@ -27,16 +38,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="100"
+        android:text="2"
         android:id="@+id/textView3"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/edit"
+            android:src="@mipmap/ic_pencil"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/profile_recycler"
-        android:layout_below="@+id/textView3"
+        android:scrollbarAlwaysDrawVerticalTrack="false"
+        android:layout_below="@+id/relat"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 

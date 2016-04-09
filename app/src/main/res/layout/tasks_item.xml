@@ -31,6 +31,25 @@
             android:textColor="@color/colorPrimary"
             android:paddingBottom="5dp"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/topic"
+            android:textSize="6pt"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskname"
+            android:textSize="6pt"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/start_btn"
+            android:layout_gravity="right" />
+
+
     </LinearLayout>
 
 
