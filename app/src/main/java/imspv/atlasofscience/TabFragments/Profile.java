@@ -4,6 +4,7 @@ package imspv.atlasofscience.TabFragments;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,24 +15,30 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import imspv.atlasofscience.Activities.Classmates;
 import imspv.atlasofscience.Activities.EditProfile;
 import imspv.atlasofscience.Activities.Teachers;
 import imspv.atlasofscience.Adapter.ProfileItems;
+import imspv.atlasofscience.Constants.Constants;
 import imspv.atlasofscience.Constants.Titles;
+import imspv.atlasofscience.Helper.SQLiteHandler;
 import imspv.atlasofscience.R;
 import imspv.atlasofscience.mlibs.RecyclerView.ItemClickSupport;
 
 public class Profile extends AbstractTabFragment {
 
+
     private static final int LAYOUT = R.layout.tab_profile;
     private List<Titles> titlesList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ProfileItems mAdapter;
+    private ViewPager mViewPager;
     private TextView titless;
     private ImageView edit;
+//    private TextView txtName;
     public Profile() {
     }
 
@@ -51,6 +58,14 @@ public class Profile extends AbstractTabFragment {
         view = inflater.inflate(LAYOUT, container, false);
 
 
+//        db = new SQLiteHandler(getContext().getApplicationContext());
+//        txtName = (TextView) view.findViewById(R.id.name);
+//        HashMap<String, String> user = db.getUserDetails();
+//        String name = user.get("name");
+//        txtName.setText(name);
+
+
+
         edit = (ImageView) view.findViewById(R.id.edit);
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +74,7 @@ public class Profile extends AbstractTabFragment {
                 startActivity(editprofile);
             }
         });
+
 
 
 
@@ -91,7 +107,6 @@ public class Profile extends AbstractTabFragment {
 
                         break;
                     case 5:
-
 
                         break;
                 }
